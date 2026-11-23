@@ -3,63 +3,74 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug"
-
+ 
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
+ 
 const last_posts = posts.slice(0, 3);
 ---
-
+ 
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
+    <div class="text-xl py-1">Bonjour 👋</div>
+    <div class="text-5xl font-bold">Je suis Régis EKLO</div>
+    <div class="text-3xl py-3 font-bold">Étudiant en BTS SIO, option SISR (2<sup>e</sup> année)</div>
     <div class="py-2">
-      <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
-      </text>
+      <p class="text-lg">
+        Passionné par les <b>réseaux</b> et les <b>systèmes</b>, je me forme à l'administration
+        d'infrastructures : labs Cisco/GNS3, MikroTik, Windows Server et virtualisation.
+        Ce site regroupe mon <b>parcours</b>, mes <b>réalisations</b>, ma <b>veille technologique</b> et mon
+        <b>tableau de synthèse</b>.
+      </p>
     </div>
     <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
-      </a>
+      <a class="btn" href="/projects"> Voir mes réalisations</a>
+      <a href="/blog/" class="btn btn-outline ml-5"> Ma veille technologique </a>
     </div>
   </div>
-
+ 
   <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+    <div class="text-3xl w-full font-bold mb-2">Mes dernières réalisations {"</>"}</div>
   </div>
 
-  <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
+    title="Windows Server et virtualisation"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
+    desc="Travaux pratiques d'administration Windows Server, déployés sur des machines virtuelles (QEMU/KVM)."
+    url="/projects"
+    badge="SYSTÈME"
   />
 
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="NAS sur Raspberry Pi"
+    img="/post_img.webp"
+    desc="Déploiement d'un serveur de stockage en réseau (NAS) sur Raspberry Pi pour le partage et la sauvegarde de fichiers."
+    url="/projects"
+    badge="STOCKAGE"
+  />
+
+  <HorizontalCard
+    title="Hotspot MikroTik"
+    img="/post_img.webp"
+    desc="Mise en place d'un hotspot Wi-Fi sur routeur MikroTik : architecture de roaming entre bornes et génération de tickets d'accès."
+    url="/projects"
+    badge="RÉSEAU"
+  />
+  
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Authentification RFID avec Arduino"
+    img="/post_img.webp"
+    desc="Service d'authentification par badge RFID basé sur Arduino, pour contrôler l'accès et identifier les utilisateurs."
+    url="/projects"
+    badge="SÉCURITÉ"
+  />
+ 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Dernières publications de la veille</div>
   </div>
-
+ 
   {
     last_posts.map((post) => (
       <>
@@ -76,3 +87,4 @@ const last_posts = posts.slice(0, 3);
     ))
   }
 </BaseLayout>
+ 
