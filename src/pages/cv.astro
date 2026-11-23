@@ -2,23 +2,23 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
 ---
- 
+
 <BaseLayout title="Parcours" sideBarActiveItemID="cv">
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Profil</div>
   </div>
- 
+
   <div class="mb-10 text-justify">
     Étudiant en BTS SIO option SISR (Solutions d'infrastructure, systèmes et réseaux), j'ai commencé mes études
     supérieures en Systèmes et Réseaux Informatiques à l'École polytechnique de Lomé, au Togo, avant de poursuivre en France. Passionné par les réseaux et les
     systèmes, je me forme à l'administration d'infrastructures à travers des projets pratiques : Active Directory,
     stockage en réseau, hotspot Wi-Fi, authentification par badge RFID.
   </div>
- 
+
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Formation</div>
   </div>
- 
+
   <div class="time-line-container grid gap-4 mb-10">
     <TimeLineElement
       title="BTS SIO option SISR (2e année)"
@@ -30,11 +30,11 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     />
     <!-- À VÉRIFIER : établissement du BTS. -->
   </div>
- 
+
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Projets</div>
   </div>
- 
+
   <div class="time-line-container mb-10">
     <TimeLineElement
       title="Hotspot Wi-Fi MikroTik : roaming et tickets d'accès"
@@ -64,14 +64,14 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
       base de données. <a href="/projects#rfid" class="underline">Voir la fiche</a>
     </TimeLineElement>
   </div>
- 
+
   <!-- Section Certifications retirée : à ajouter ici si tu en obtiens (modèle : <ul class="list-disc mx-6 mb-10 grid gap-2"><li>Nom</li></ul>) -->
   <!-- Section Langues à ajouter une fois tes niveaux confirmés (français, anglais...). -->
- 
+
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Compétences</div>
   </div>
- 
+
   <div class="mb-3 font-bold">Réseaux</div>
   <ul class="list-disc md:columns-3 columns-1 mx-6 mb-6">
     <li>Cisco IOS : VLAN, routage inter-VLAN, routage statique</li>
@@ -80,20 +80,25 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     <li>MikroTik RouterOS (hotspot, bridge, DHCP)</li>
     <li>Sécurisation d'accès (SSH)</li>
   </ul>
- 
+
   <div class="mb-3 font-bold">Systèmes</div>
   <ul class="list-disc md:columns-3 columns-1 mx-6 mb-6">
     <li>Windows Server : Active Directory, DHCP, DNS</li>
     <li>Clustering de basculement</li>
+    <li>Administration Linux</li>
     <li>Virtualisation (QEMU/KVM, Proxmox)</li>
-    <li>Linux</li>
     <li>OpenMediaVault, Raspberry Pi</li>
   </ul>
- 
+
+  <div class="mb-3 font-bold">Bases de données</div>
+  <ul class="list-disc md:columns-3 columns-1 mx-6 mb-6">
+    <li>Administration de bases de données</li>
+  </ul>
+
   <div class="mb-3 font-bold">Scripts et électronique</div>
   <ul class="list-disc md:columns-3 columns-1 mx-6">
+    <li>PowerShell</li>
     <li>Python</li>
     <li>Arduino, RFID</li>
   </ul>
 </BaseLayout>
- 
