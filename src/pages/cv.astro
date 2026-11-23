@@ -2,91 +2,98 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
 ---
-
-<BaseLayout title="Resume" sideBarActiveItemID="cv">
+ 
+<BaseLayout title="Parcours" sideBarActiveItemID="cv">
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Profile</div>
+    <div class="text-3xl w-full font-bold">Profil</div>
   </div>
-
+ 
   <div class="mb-10 text-justify">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Étudiant en BTS SIO option SISR (Solutions d'infrastructure, systèmes et réseaux), j'ai commencé mes études
+    supérieures en Systèmes et Réseaux Informatiques à l'École polytechnique de Lomé, au Togo, avant de poursuivre en France. Passionné par les réseaux et les
+    systèmes, je me forme à l'administration d'infrastructures à travers des projets pratiques : Active Directory,
+    stockage en réseau, hotspot Wi-Fi, authentification par badge RFID.
   </div>
-
+ 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Education</div>
+    <div class="text-3xl w-full font-bold">Formation</div>
   </div>
-
+ 
   <div class="time-line-container grid gap-4 mb-10">
     <TimeLineElement
-      title="Title Name"
-      subtitle="[start year] to [end year] at [Study Center Name], [City], [Country]"
+      title="BTS SIO option SISR (2e année)"
+      subtitle="2026 – en cours, Lycée La Joliverie, Saint-Sébastien-sur-Loire, France"
     />
     <TimeLineElement
-      title="Title Name"
-      subtitle="[start year] to [end year] at [Study Center Name], [City], [Country]"
+      title="Cycle licence en Systèmes et Réseaux Informatiques (SRI), système LMD"
+      subtitle="2024 – 2026, École polytechnique de Lomé, Lomé, Togo"
     />
+    <!-- À VÉRIFIER : établissement du BTS. -->
   </div>
-
+ 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Experience</div>
+    <div class="text-3xl w-full font-bold">Projets</div>
   </div>
-
+ 
   <div class="time-line-container mb-10">
     <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
+      title="Hotspot Wi-Fi MikroTik : roaming et tickets d'accès"
+      subtitle="Projet personnel"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+      Centralisation du DHCP et du hotspot sur un routeur MikroTik, avec roaming entre bornes et génération de tickets
+      par un outil en Python. <a href="/projects#hotspot" class="underline">Voir la fiche</a>
     </TimeLineElement>
     <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
+      title="Active Directory, DHCP et DNS sous Windows Server"
+      subtitle="Projet de formation, École polytechnique de Lomé"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+      Mise en place d'un domaine Active Directory, d'un serveur DHCP et du DNS sur un serveur physique.
+      <a href="/projects#windows-server" class="underline">Voir la fiche</a>
     </TimeLineElement>
     <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
+      title="NAS avec OpenMediaVault sur Raspberry Pi"
+      subtitle="Projet de formation, École polytechnique de Lomé"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+      Déploiement d'un serveur de stockage en réseau. <a href="/projects#nas" class="underline">Voir la fiche</a>
+    </TimeLineElement>
+    <TimeLineElement
+      title="Authentification RFID et suivi des présences"
+      subtitle="Projet du cours de gestion de projet, École polytechnique de Lomé"
+    >
+      Système d'authentification par badge RFID basé sur Arduino, avec enregistrement des présences et des absences en
+      base de données. <a href="/projects#rfid" class="underline">Voir la fiche</a>
     </TimeLineElement>
   </div>
-
+ 
+  <!-- Section Certifications retirée : à ajouter ici si tu en obtiens (modèle : <ul class="list-disc mx-6 mb-10 grid gap-2"><li>Nom</li></ul>) -->
+  <!-- Section Langues à ajouter une fois tes niveaux confirmés (français, anglais...). -->
+ 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Certifications</div>
+    <div class="text-3xl w-full font-bold">Compétences</div>
   </div>
-
-  <ul class="list-disc mx-6 mb-10 grid gap-2">
-    <li>
-      <a href="#" target="_blank"> Certification Name (with link)</a>
-    </li>
-    <li>
-      <a href="#" target="_blank"> Certification Name (with link)</a>
-    </li>
+ 
+  <div class="mb-3 font-bold">Réseaux</div>
+  <ul class="list-disc md:columns-3 columns-1 mx-6 mb-6">
+    <li>Cisco IOS : VLAN, routage inter-VLAN, routage statique</li>
+    <li>DHCP, relais DHCP, NAT</li>
+    <li>GNS3</li>
+    <li>MikroTik RouterOS (hotspot, bridge, DHCP)</li>
+    <li>Sécurisation d'accès (SSH)</li>
   </ul>
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Skills</div>
-  </div>
-
-  <ul class="list-disc md:columns-5 columns-2 mx-6">
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
+ 
+  <div class="mb-3 font-bold">Systèmes</div>
+  <ul class="list-disc md:columns-3 columns-1 mx-6 mb-6">
+    <li>Windows Server : Active Directory, DHCP, DNS</li>
+    <li>Clustering de basculement</li>
+    <li>Virtualisation (QEMU/KVM, Proxmox)</li>
+    <li>Linux</li>
+    <li>OpenMediaVault, Raspberry Pi</li>
+  </ul>
+ 
+  <div class="mb-3 font-bold">Scripts et électronique</div>
+  <ul class="list-disc md:columns-3 columns-1 mx-6">
+    <li>Python</li>
+    <li>Arduino, RFID</li>
   </ul>
 </BaseLayout>
+ 
