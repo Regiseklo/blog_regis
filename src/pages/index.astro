@@ -31,39 +31,40 @@ const last_posts = posts.slice(0, 3);
   <div>
     <div class="text-3xl w-full font-bold mb-2">Mes dernières réalisations {"</>"}</div>
   </div>
-
-  <div class="divider my-0"></div>
+ 
   <HorizontalCard
-    title="Windows Server et virtualisation"
+    title="Hotspot Wi-Fi MikroTik"
     img="/post_img.webp"
-    desc="Travaux pratiques d'administration Windows Server, déployés sur des machines virtuelles (QEMU/KVM)."
-    url="/projects"
-    badge="SYSTÈME"
-  />
-
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="NAS sur Raspberry Pi"
-    img="/post_img.webp"
-    desc="Déploiement d'un serveur de stockage en réseau (NAS) sur Raspberry Pi pour le partage et la sauvegarde de fichiers."
-    url="/projects"
-    badge="STOCKAGE"
-  />
-
-  <HorizontalCard
-    title="Hotspot MikroTik"
-    img="/post_img.webp"
-    desc="Mise en place d'un hotspot Wi-Fi sur routeur MikroTik : architecture de roaming entre bornes et génération de tickets d'accès."
-    url="/projects"
+    desc="Hotspot centralisé sur routeur MikroTik : roaming entre bornes, profils d'accès par durée et génération de tickets."
+    url="/projects#hotspot"
+    target="_self"
     badge="RÉSEAU"
   />
-  
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Authentification RFID avec Arduino"
+    title="Active Directory, DHCP et DNS"
     img="/post_img.webp"
-    desc="Service d'authentification par badge RFID basé sur Arduino, pour contrôler l'accès et identifier les utilisateurs."
-    url="/projects"
+    desc="Mise en place d'un domaine Active Directory, d'un serveur DHCP et du DNS sous Windows Server, sur un serveur physique."
+    url="/projects#windows-server"
+    target="_self"
+    badge="SYSTÈME"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="NAS avec OpenMediaVault"
+    img="/post_img.webp"
+    desc="Déploiement d'un serveur de stockage en réseau avec OpenMediaVault sur Raspberry Pi."
+    url="/projects#nas"
+    target="_self"
+    badge="STOCKAGE"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Authentification RFID"
+    img="/post_img.webp"
+    desc="Système d'authentification par badge RFID sur Arduino, avec suivi des présences et absences en base de données."
+    url="/projects#rfid"
+    target="_self"
     badge="SÉCURITÉ"
   />
  
