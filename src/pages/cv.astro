@@ -72,33 +72,72 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     <div class="text-3xl w-full font-bold">Compétences</div>
   </div>
 
-  <div class="mb-3 font-bold">Réseaux</div>
-  <ul class="list-disc md:columns-3 columns-1 mx-6 mb-6">
-    <li>Cisco IOS : VLAN, routage inter-VLAN, routage statique</li>
-    <li>DHCP, relais DHCP, NAT</li>
-    <li>GNS3</li>
-    <li>MikroTik RouterOS (hotspot, bridge, DHCP)</li>
-    <li>Sécurisation d'accès (SSH)</li>
+  <p class="mb-6 opacity-80">
+    Compétences du référentiel du BTS SIO option SISR, avec les réalisations qui les illustrent.
+  </p>
+
+  <div class="mb-3 text-xl font-bold">Bloc 2 : Administration des systèmes et des réseaux</div>
+  <ul class="list-disc mx-6 mb-8 grid gap-3">
+    <li>
+      <b>Concevoir une solution d'infrastructure réseau.</b> Organiser les composants d'une infrastructure à partir d'un
+      besoin : centralisation du DHCP et du hotspot avec roaming entre plusieurs bornes (MikroTik), domaine Active
+      Directory associé à des services DHCP et DNS.
+      <a href="/projects#hotspot" class="underline">Hotspot MikroTik</a>,
+      <a href="/projects#windows-server" class="underline">Active Directory</a>.
+    </li>
+    <li>
+      <b>Installer, tester et déployer une solution d'infrastructure réseau.</b> Mettre en service et valider des
+      services sur serveur physique, machine virtuelle ou carte embarquée : Windows Server (Active Directory, DHCP,
+      DNS), NAS OpenMediaVault sur Raspberry Pi, routeurs convertis en points d'accès, labs Cisco sous GNS3 (VLAN,
+      routage inter-VLAN, DHCP avec relais).
+      <a href="/projects#windows-server" class="underline">Active Directory</a>,
+      <a href="/projects#nas" class="underline">NAS</a>.
+    </li>
+    <li>
+      <b>Exploiter, dépanner et superviser une solution d'infrastructure réseau.</b> Maintenir un service dans la durée :
+      profils d'accès par durée et suppression automatique des comptes expirés par scripts sur le routeur, diagnostic
+      de pannes (par exemple un blocage de pare-feu entre deux nœuds d'un cluster Windows).
+      <a href="/projects#hotspot" class="underline">Hotspot MikroTik</a>.
+    </li>
   </ul>
 
-  <div class="mb-3 font-bold">Systèmes</div>
-  <ul class="list-disc md:columns-3 columns-1 mx-6 mb-6">
-    <li>Windows Server : Active Directory, DHCP, DNS</li>
-    <li>Clustering de basculement</li>
-    <li>Administration Linux</li>
-    <li>Virtualisation (QEMU/KVM, Proxmox)</li>
-    <li>OpenMediaVault, Raspberry Pi</li>
+  <div class="mb-3 text-xl font-bold">Bloc 1 : Support et mise à disposition de services informatiques</div>
+  <ul class="list-disc mx-6 mb-8 grid gap-3">
+    <li>
+      <b>Mettre à disposition des utilisateurs un service informatique.</b> Rendre un service réellement utilisable :
+      accès Wi-Fi par tickets avec un outil de génération de bons PDF, stockage réseau (NAS), authentification
+      centralisée par annuaire.
+    </li>
+    <li>
+      <b>Travailler en mode projet.</b> Projets menés en équipe, dont le système de présence par badge RFID réalisé dans
+      le cadre du cours de gestion de projet.
+      <a href="/projects#rfid" class="underline">Authentification RFID</a>.
+    </li>
   </ul>
 
-  <div class="mb-3 font-bold">Bases de données</div>
-  <ul class="list-disc md:columns-3 columns-1 mx-6 mb-6">
-    <li>Administration de bases de données</li>
+  <div class="mb-3 text-xl font-bold">Bloc 3 : Cybersécurité des services informatiques</div>
+  <ul class="list-disc mx-6 mb-8 grid gap-3">
+    <li>
+      <b>Assurer la cybersécurité d'une infrastructure réseau, d'un système, d'un service.</b> Contrôle d'accès et
+      authentification (annuaire Active Directory, badges RFID), sécurisation des accès d'administration des
+      équipements Cisco (SSH à la place de Telnet).
+    </li>
   </ul>
 
-  <div class="mb-3 font-bold">Scripts et électronique</div>
-  <ul class="list-disc md:columns-3 columns-1 mx-6">
-    <li>PowerShell</li>
-    <li>Python</li>
-    <li>Arduino, RFID</li>
+  <div class="mb-3 text-xl font-bold">Compétences complémentaires</div>
+  <ul class="list-disc mx-6 grid gap-3">
+    <li>
+      <b>Administrer un système Linux.</b> Installer et configurer un système, gérer les utilisateurs, les services et le
+      réseau.
+    </li>
+    <li>
+      <b>Administrer une base de données.</b> Concevoir et gérer une base : dans le projet RFID, base enregistrant les
+      présences et les absences.
+    </li>
+    <li>
+      <b>Automatiser l'administration par scripts.</b> PowerShell pour les tâches d'administration Windows, Python pour
+      les outils internes (génération de tickets PDF avec interface graphique).
+    </li>
   </ul>
+  <!-- À VÉRIFIER : intitulés exacts dans l'annexe I b du référentiel du BTS SIO. À PRÉCISER avec un exemple concret pour Linux, bases de données et PowerShell (le jury peut demander). -->
 </BaseLayout>
