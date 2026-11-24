@@ -10,143 +10,113 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
 
   <div class="mb-10 text-justify">
     Étudiant en BTS SIO option SISR (Solutions d'infrastructure, systèmes et réseaux), j'ai commencé mes études
-    supérieures en Systèmes et Réseaux Informatiques à l'École polytechnique de Lomé, au Togo, avant de poursuivre en France. Passionné par les réseaux et les
-    systèmes, je me forme à l'administration d'infrastructures à travers des projets pratiques : Active Directory,
-    stockage en réseau, hotspot Wi-Fi, authentification par badge RFID.
+    supérieures en Systèmes et Réseaux Informatiques à l'École polytechnique de Lomé, au Togo, avant de poursuivre en
+    France. Je me forme à l'administration d'infrastructures à travers des projets pratiques : Active Directory, stockage
+    en réseau, hotspot Wi-Fi, bases de données, authentification par badge RFID.
   </div>
 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Formation</div>
+    <div class="text-3xl w-full font-bold">Parcours de professionnalisation</div>
   </div>
 
   <div class="time-line-container grid gap-4 mb-10">
     <TimeLineElement
-      title="BTS SIO option SISR (2e année)"
-      subtitle="2026 – en cours, Lycée La Joliverie, Saint-Sébastien-sur-Loire, France"
-    />
-    <TimeLineElement
-      title="Cycle licence en Systèmes et Réseaux Informatiques (SRI), système LMD"
+      title="Cycle licence en Systèmes et Réseaux Informatiques (SRI)"
       subtitle="2024 – 2026, École polytechnique de Lomé, Lomé, Togo"
-    />
-    <!-- À VÉRIFIER : établissement du BTS. -->
+    >
+      Cinq projets de formation menés en équipe : domaine Active Directory avec DHCP et DNS, NAS sous OpenMediaVault,
+      serveur web Apache sous Debian, bases de données PostgreSQL et Oracle, authentification RFID dans le cadre du cours
+      de gestion de projet. <a href="/projects" class="underline">Voir les fiches</a>.
+    </TimeLineElement>
+    <TimeLineElement title="Hotspot Wi-Fi MikroTik" subtitle="2026, projet personnel">
+      Hotspot centralisé avec roaming entre bornes, profils d'accès par durée et outil Python de génération de tickets.
+      <a href="/projects#hotspot" class="underline">Voir la fiche</a>.
+    </TimeLineElement>
+    <TimeLineElement
+      title="BTS SIO option SISR, 2e année"
+      subtitle="2026 – en cours, Lycée La Joliverie, Saint-Sébastien-sur-Loire, France"
+    >
+      Travaux pratiques d'infrastructure : labs Cisco sous GNS3, MikroTik, Windows Server et virtualisation.
+    </TimeLineElement>
+    <TimeLineElement title="Portfolio et veille technologique" subtitle="Novembre 2026 – en cours">
+      Création de ce site et mise en place d'une veille technologique alimentée automatiquement.
+      <a href="/blog/" class="underline">Voir la veille</a>.
+    </TimeLineElement>
+    <!-- À COMPLÉTER : périodes exactes des projets de Lomé. -->
   </div>
 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Projets</div>
+    <div class="text-3xl w-full font-bold">Compétences du bloc « Support et mise à disposition de services informatiques »</div>
   </div>
 
-  <div class="time-line-container mb-10">
-    <TimeLineElement
-      title="Hotspot Wi-Fi MikroTik : roaming et tickets d'accès"
-      subtitle="Projet personnel"
-    >
-      Centralisation du DHCP et du hotspot sur un routeur MikroTik, avec roaming entre bornes et génération de tickets
-      par un outil en Python. <a href="/projects#hotspot" class="underline">Voir la fiche</a>
-    </TimeLineElement>
-    <TimeLineElement
-      title="Active Directory, DHCP et DNS sous Windows Server"
-      subtitle="Projet de formation, École polytechnique de Lomé"
-    >
-      Mise en place d'un domaine Active Directory, d'un serveur DHCP et du DNS sur un serveur physique.
-      <a href="/projects#windows-server" class="underline">Voir la fiche</a>
-    </TimeLineElement>
-    <TimeLineElement
-      title="NAS avec OpenMediaVault sur Raspberry Pi"
-      subtitle="Projet de formation, École polytechnique de Lomé"
-    >
-      Déploiement d'un serveur de stockage en réseau. <a href="/projects#nas" class="underline">Voir la fiche</a>
-    </TimeLineElement>
-    <TimeLineElement
-      title="Authentification RFID et suivi des présences"
-      subtitle="Projet du cours de gestion de projet, École polytechnique de Lomé"
-    >
-      Système d'authentification par badge RFID basé sur Arduino, avec enregistrement des présences et des absences en
-      base de données. <a href="/projects#rfid" class="underline">Voir la fiche</a>
-    </TimeLineElement>
-  </div>
-
-  <!-- Section Certifications retirée : à ajouter ici si tu en obtiens (modèle : <ul class="list-disc mx-6 mb-10 grid gap-2"><li>Nom</li></ul>) -->
-  <!-- Section Langues à ajouter une fois tes niveaux confirmés (français, anglais...). -->
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Compétences</div>
-  </div>
-
-  <p class="mb-6 opacity-80">
-    Compétences du référentiel du BTS SIO option SISR, avec les réalisations qui les illustrent.
-  </p>
-
-  <div class="mb-3 text-xl font-bold">Bloc 2 : Administration des systèmes et des réseaux</div>
-  <ul class="list-disc mx-6 mb-8 grid gap-3">
+  <ul class="list-disc mx-6 mb-10 grid gap-3">
     <li>
-      <b>Concevoir une solution d'infrastructure réseau.</b> Organiser les composants d'une infrastructure à partir d'un
-      besoin : centralisation du DHCP et du hotspot avec roaming entre plusieurs bornes (MikroTik), domaine Active
-      Directory associé à des services DHCP et DNS.
-      <a href="/projects#hotspot" class="underline">Hotspot MikroTik</a>,
-      <a href="/projects#windows-server" class="underline">Active Directory</a>.
+      <b>Gérer le patrimoine informatique (B1.1).</b> Gérer des sauvegardes et vérifier les restaurations : sauvegardes
+      programmées, à froid et à chaud avec Oracle (RMAN), restauration d'une base après une panne simulée. Mettre en
+      place des niveaux d'habilitation : création d'utilisateurs et contrôle des droits sous Debian, domaine Active
+      Directory, profils d'accès par durée sur le hotspot.
+      <a href="/projects#bases-de-donnees" class="underline">Bases de données</a>,
+      <a href="/projects#serveur-web" class="underline">Serveur web</a>.
     </li>
     <li>
-      <b>Installer, tester et déployer une solution d'infrastructure réseau.</b> Mettre en service et valider des
-      services sur serveur physique, machine virtuelle ou carte embarquée : Windows Server (Active Directory, DHCP,
-      DNS), serveur web Apache sous Debian, NAS OpenMediaVault sur Raspberry Pi, routeurs convertis en points d'accès, labs Cisco sous GNS3 (VLAN,
-      routage inter-VLAN, DHCP avec relais).
-      <a href="/projects#windows-server" class="underline">Active Directory</a>,
-      <a href="/projects#nas" class="underline">NAS</a>.
+      <b>Répondre aux incidents et aux demandes d'assistance (B1.2).</b> Diagnostiquer et résoudre un incident : problèmes
+      réseau et de pare-feu qui bloquaient l'accès à un NAS, panne simulée d'une base Oracle, gestion des incidents et
+      prévention des pannes.
+      <a href="/projects#nas" class="underline">NAS</a>,
+      <a href="/projects#bases-de-donnees" class="underline">Bases de données</a>.
     </li>
     <li>
-      <b>Exploiter, dépanner et superviser une solution d'infrastructure réseau.</b> Maintenir un service dans la durée :
-      profils d'accès par durée et suppression automatique des comptes expirés par scripts sur le routeur, diagnostic
-      de pannes (par exemple un blocage de pare-feu entre deux nœuds d'un cluster Windows).
-      <a href="/projects#hotspot" class="underline">Hotspot MikroTik</a>.
-    </li>
-  </ul>
-
-  <div class="mb-3 text-xl font-bold">Bloc 1 : Support et mise à disposition de services informatiques</div>
-  <ul class="list-disc mx-6 mb-8 grid gap-3">
-    <li>
-      <b>Mettre à disposition des utilisateurs un service informatique.</b> Rendre un service réellement utilisable :
-      accès Wi-Fi par tickets avec un outil de génération de bons PDF, stockage réseau (NAS), authentification
-      centralisée par annuaire.
+      <b>Développer la présence en ligne de l'organisation (B1.3).</b> Conception et publication de ce portfolio, avec
+      mentions légales, hébergement et flux RSS.
+      <a href="/mentions-legales" class="underline">Mentions légales</a>.
     </li>
     <li>
-      <b>Travailler en mode projet.</b> Projets menés en équipe, dont le système de présence par badge RFID réalisé dans
-      le cadre du cours de gestion de projet.
+      <b>Travailler en mode projet (B1.4).</b> Projet d'authentification RFID et de suivi des présences réalisé en équipe
+      dans le cadre du cours de gestion de projet, dont j'ai assuré la partie logicielle.
       <a href="/projects#rfid" class="underline">Authentification RFID</a>.
     </li>
+    <li>
+      <b>Mettre à disposition des utilisateurs un service informatique (B1.5).</b> Déployer des services utilisables :
+      domaine Active Directory (installation des rôles et création du domaine), NAS configuré et accessible depuis un
+      navigateur, accès Wi-Fi par tickets.
+      <a href="/projects#windows-server" class="underline">Active Directory</a>,
+      <a href="/projects#nas" class="underline">NAS</a>,
+      <a href="/projects#hotspot" class="underline">Hotspot</a>.
+    </li>
+    <li>
+      <b>Organiser son développement professionnel (B1.6).</b> Veille technologique régulière, publiée sur ce site.
+      <a href="/blog/" class="underline">Veille</a>.
+    </li>
   </ul>
+  <!-- À PRÉCISER pour chaque compétence : ta contribution personnelle dans les travaux d'équipe. B1.2 est la plus fragile : ajouter un exemple d'incident ou de demande traité(e). B1.6 : mettre à jour le profil LinkedIn. -->
 
-  <div class="mb-3 text-xl font-bold">Bloc 3 : Cybersécurité des services informatiques</div>
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Compétences complémentaires de l'option SISR</div>
+  </div>
+
   <ul class="list-disc mx-6 mb-8 grid gap-3">
     <li>
-      <b>Garantir la disponibilité, l'intégrité et la confidentialité des services informatiques et des données.</b>
-      Protéger les données par des sauvegardes programmées, à froid et à chaud, avec Oracle (RMAN), et restaurer une
-      base après une panne simulée, avec gestion des incidents et prévention des pannes.
-      <a href="/projects#bases-de-donnees" class="underline">Bases de données</a>.
+      <b>Administration des systèmes et des réseaux (bloc 2).</b> Concevoir, installer, tester, déployer puis exploiter
+      une infrastructure : centralisation du DHCP et du hotspot avec roaming (MikroTik), Windows Server (Active
+      Directory, DHCP, DNS), NAS, serveur web Apache sous Debian, labs Cisco sous GNS3 (VLAN, routage inter-VLAN, DHCP
+      avec relais).
     </li>
     <li>
-      <b>Assurer la cybersécurité d'une infrastructure réseau, d'un système, d'un service.</b> Contrôle d'accès et
-      authentification (annuaire Active Directory, badges RFID), gestion des utilisateurs, des droits et des accès sur
-      un serveur web Apache, sécurisation des accès d'administration des équipements Cisco (SSH à la place de Telnet).
-      <a href="/projects#serveur-web" class="underline">Serveur web</a>.
+      <b>Cybersécurité (bloc 3).</b> Protéger les données par des sauvegardes à froid et à chaud, contrôler les accès et
+      l'authentification (Active Directory, badges RFID), sécuriser les accès d'administration des équipements Cisco (SSH à
+      la place de Telnet).
     </li>
-  </ul>
-
-  <div class="mb-3 text-xl font-bold">Compétences complémentaires</div>
-  <ul class="list-disc mx-6 grid gap-3">
     <li>
-      <b>Administrer un système Linux.</b> Installation et configuration d'un serveur web Apache sous Debian, création
+      <b>Administration Linux.</b> Installation et configuration d'un serveur web Apache sous Debian, création
       d'utilisateurs et contrôle de leurs droits (<code>adduser</code>, <code>chown</code>, <code>chmod</code>).
-      <a href="/projects#serveur-web" class="underline">Serveur web</a>.
     </li>
     <li>
-      <b>Administrer des bases de données.</b> SQL et manipulation d'une base avec PostgreSQL ; sauvegarde, restauration
-      et modes de démarrage avec Oracle. Dans le projet RFID, base enregistrant les présences et les absences.
-      <a href="/projects#bases-de-donnees" class="underline">Bases de données</a>.
+      <b>Bases de données.</b> SQL et manipulation d'une base avec PostgreSQL ; sauvegarde, restauration et modes de
+      démarrage avec Oracle.
     </li>
     <li>
-      <b>Automatiser l'administration par scripts.</b> PowerShell pour les tâches d'administration Windows, Python pour
-      les outils internes (génération de tickets PDF avec interface graphique).
+      <b>Scripts.</b> PowerShell pour l'administration Windows, Python pour les outils internes (génération de tickets PDF
+      avec interface graphique).
     </li>
   </ul>
-  <!-- À VÉRIFIER : intitulés exacts dans l'annexe I b du référentiel du BTS SIO. À PRÉCISER avec un exemple concret pour Linux, bases de données et PowerShell (le jury peut demander). -->
 </BaseLayout>

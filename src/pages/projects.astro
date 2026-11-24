@@ -38,19 +38,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <h2 class="text-2xl font-bold">Active Directory, DHCP et DNS sous Windows Server</h2>
       <span class="badge badge-neutral">SYSTÈME</span>
     </div>
-    <p class="mt-2 opacity-80"><b>Contexte :</b> projet de formation à l'École polytechnique de Lomé.</p>
+    <p class="mt-2 opacity-80"><b>Contexte :</b> projet de formation à l'École polytechnique de Lomé, réalisé en équipe.</p>
 
-    <h3 class="text-lg font-bold mt-4">Ce que j'ai réalisé</h3>
+    <h3 class="text-lg font-bold mt-4">Le projet</h3>
+    <p class="mt-1">Mise en place, sur un serveur physique, d'une infrastructure Windows Server : domaine Active Directory, serveur DHCP et service DNS.</p>
+
+    <h3 class="text-lg font-bold mt-4">Ma contribution personnelle</h3>
     <ul class="list-disc ml-6 mt-1 space-y-1">
-      <li>Mise en place d'un domaine Active Directory.</li>
-      <li>Configuration d'un serveur DHCP pour l'attribution automatique des adresses.</li>
-      <li>Configuration du service DNS.</li>
-      <li>Déploiement de l'ensemble sur un serveur physique.</li>
+      <li>Installation des rôles et fonctionnalités de Windows Server.</li>
+      <li>Création du domaine.</li>
+    </ul>
+
+    <h3 class="text-lg font-bold mt-4">Notions clés</h3>
+    <ul class="list-disc ml-6 mt-1 space-y-1">
+      <li>Un <b>rôle</b> est un service principal du serveur (Active Directory Domain Services, DHCP, DNS) ; une <b>fonctionnalité</b> est un composant complémentaire. Les deux s'installent depuis le Gestionnaire de serveur.</li>
+      <li>Après l'installation du rôle Active Directory, le serveur est promu <b>contrôleur de domaine</b> : il centralise les comptes, les groupes et les droits des utilisateurs du domaine.</li>
+      <li>Active Directory s'appuie sur le <b>DNS</b> pour que les postes retrouvent les contrôleurs de domaine. Le <b>DHCP</b> attribue automatiquement les adresses IP aux postes.</li>
     </ul>
 
     <h3 class="text-lg font-bold mt-4">Outils</h3>
     <p>Windows Server, Active Directory (AD DS), DHCP, DNS.</p>
-    <!-- À COMPLÉTER : nom du domaine, nombre de postes clients, résultat, captures d'écran. -->
+    <!-- À COMPLÉTER : nom du domaine, nombre de postes clients, version de Windows Server, résultat, schéma d'architecture. -->
   </article>
 
   <!-- ============ 3. NAS ============ -->
@@ -61,14 +69,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
     <p class="mt-2 opacity-80"><b>Contexte :</b> projet de formation à l'École polytechnique de Lomé, réalisé en équipe.</p>
 
-    <h3 class="text-lg font-bold mt-4">Ce que j'ai réalisé</h3>
+    <h3 class="text-lg font-bold mt-4">Le projet</h3>
+    <p class="mt-1">Déploiement d'un serveur de stockage en réseau (NAS) avec OpenMediaVault, installé sur un Raspberry Pi.</p>
+
+    <h3 class="text-lg font-bold mt-4">Ma contribution personnelle</h3>
     <ul class="list-disc ml-6 mt-1 space-y-1">
-      <li>Déploiement d'un serveur de stockage en réseau (NAS) à partir d'OpenMediaVault, installé sur un Raspberry Pi.</li>
+      <li>Configuration du NAS.</li>
+      <li>Résolution des problèmes réseau et de pare-feu qui empêchaient d'y accéder.</li>
+      <li>Mise en place de l'accès à l'administration du NAS depuis un navigateur web.</li>
+    </ul>
+
+    <h3 class="text-lg font-bold mt-4">Notions clés</h3>
+    <ul class="list-disc ml-6 mt-1 space-y-1">
+      <li>OpenMediaVault est une distribution dédiée au NAS : elle s'administre depuis une interface web, ce qui évite d'utiliser la ligne de commande pour la gestion courante.</li>
+      <li>Méthode de diagnostic d'un accès réseau impossible : vérifier l'adresse IP et la passerelle de l'appareil, tester la connectivité (<code>ping</code>), puis contrôler que le pare-feu autorise le port du service demandé.</li>
+      <li>Un pare-feu filtre le trafic par adresse et par port : une règle manquante suffit à rendre un service inaccessible alors qu'il fonctionne.</li>
     </ul>
 
     <h3 class="text-lg font-bold mt-4">Outils</h3>
     <p>OpenMediaVault, Raspberry Pi.</p>
-    <!-- À COMPLÉTER : ce que tu as fait précisément (disques, partages, utilisateurs...), résultat, captures d'écran. -->
+    <!-- À COMPLÉTER : quels problèmes réseau et pare-feu précisément, comment tu les as diagnostiqués et résolus (cet exemple soutient B1.2), disques et partages configurés, schéma, captures. -->
   </article>
 
   <!-- ============ 4. RFID ============ -->
@@ -77,17 +97,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <h2 class="text-2xl font-bold">Authentification RFID et suivi des présences</h2>
       <span class="badge badge-neutral">SÉCURITÉ</span>
     </div>
-    <p class="mt-2 opacity-80"><b>Contexte :</b> projet du cours de gestion de projet, à l'École polytechnique de Lomé.</p>
+    <p class="mt-2 opacity-80"><b>Contexte :</b> projet du cours de gestion de projet, à l'École polytechnique de Lomé, réalisé en équipe.</p>
 
-    <h3 class="text-lg font-bold mt-4">Ce que j'ai réalisé</h3>
+    <h3 class="text-lg font-bold mt-4">Le projet</h3>
+    <p class="mt-1">Système d'authentification par badge RFID basé sur une carte Arduino, avec une base de données qui enregistre la présence ou l'absence des personnes.</p>
+
+    <h3 class="text-lg font-bold mt-4">Ma contribution personnelle</h3>
     <ul class="list-disc ml-6 mt-1 space-y-1">
-      <li>Système d'authentification par badge RFID basé sur une carte Arduino.</li>
-      <li>Enregistrement dans une base de données de la liste des personnes présentes ou absentes.</li>
+      <li>Responsable de la partie logicielle du projet.</li>
+    </ul>
+
+    <h3 class="text-lg font-bold mt-4">Notions clés</h3>
+    <ul class="list-disc ml-6 mt-1 space-y-1">
+      <li>Chaque badge RFID contient un identifiant unique. Le lecteur le transmet à la carte, puis au logiciel.</li>
+      <li>Le logiciel compare l'identifiant aux enregistrements de la base de données pour authentifier la personne, puis note sa présence.</li>
+      <li>Les personnes dont le badge n'a pas été lu sur la période apparaissent comme absentes.</li>
     </ul>
 
     <h3 class="text-lg font-bold mt-4">Outils</h3>
     <p>Arduino, lecteur RFID, base de données.</p>
-    <!-- À COMPLÉTER : confirmer la carte (Arduino seul ? ESP32 ?), le langage et le type de base de données, le résultat, les captures. -->
+    <!-- À COMPLÉTER : ce que le logiciel faisait précisément (programme sur la carte ? application côté serveur ? interface ?), langages et base de données utilisés, schéma de l'architecture, répartition des rôles dans l'équipe. Confirmer si une carte ESP32 était utilisée. -->
   </article>
 
   <!-- ============ 5. SERVEUR WEB APACHE ============ -->

@@ -1,152 +1,188 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import TimeLineElement from "../components/cv/TimeLine.astro";
+
+// Bloc 1 du BTS SIO : Support et mise à disposition de services informatiques (épreuve E5)
+const competences = [
+  { code: "B1.1", label: "Gérer le patrimoine informatique" },
+  { code: "B1.2", label: "Répondre aux incidents et aux demandes d'assistance et d'évolution" },
+  { code: "B1.3", label: "Développer la présence en ligne de l'organisation" },
+  { code: "B1.4", label: "Travailler en mode projet" },
+  { code: "B1.5", label: "Mettre à disposition des utilisateurs un service informatique" },
+  { code: "B1.6", label: "Organiser son développement professionnel" },
+];
+
+// Compétences complémentaires de l'option SISR (blocs 2 et 3)
+const complementaires = [
+  { code: "B2.1", label: "Concevoir une solution d'infrastructure réseau" },
+  { code: "B2.2", label: "Installer, tester et déployer une solution d'infrastructure réseau" },
+  { code: "B2.3", label: "Exploiter, dépanner et superviser une solution d'infrastructure réseau" },
+  { code: "B3.4", label: "Garantir la disponibilité, l'intégrité et la confidentialité des services informatiques et des données" },
+  { code: "B3.5", label: "Assurer la cybersécurité d'une infrastructure réseau, d'un système, d'un service" },
+];
+
+// Pour ajouter une réalisation : copier un bloc, puis renseigner la période, les productions et les codes de compétences
+const realisations = [
+  {
+    titre: "Hotspot Wi-Fi MikroTik",
+    contexte: "Projet personnel",
+    periode: "2026",
+    lien: "/projects#hotspot",
+    productions: ["Fiche de réalisation", "Outil Python de génération de tickets"],
+    competences: ["B1.1", "B1.5"],
+    complementaires: ["B2.1", "B2.2", "B2.3"],
+  },
+  {
+    titre: "Active Directory, DHCP et DNS",
+    contexte: "Projet de formation, École polytechnique de Lomé",
+    periode: "2024 – 2026",
+    lien: "/projects#windows-server",
+    productions: ["Fiche de réalisation"],
+    competences: ["B1.1", "B1.5"],
+    complementaires: ["B2.1", "B2.2", "B3.5"],
+  },
+  {
+    titre: "NAS OpenMediaVault",
+    contexte: "Projet de formation, École polytechnique de Lomé",
+    periode: "2024 – 2026",
+    lien: "/projects#nas",
+    productions: ["Fiche de réalisation"],
+    competences: ["B1.2", "B1.5"],
+    complementaires: ["B2.2"],
+  },
+  {
+    titre: "Authentification RFID",
+    contexte: "Cours de gestion de projet, École polytechnique de Lomé",
+    periode: "2024 – 2026",
+    lien: "/projects#rfid",
+    productions: ["Fiche de réalisation"],
+    competences: ["B1.4"],
+    complementaires: ["B3.5"],
+  },
+  {
+    titre: "Serveur web Apache sous Debian",
+    contexte: "Projet de formation",
+    periode: "2024 – 2026",
+    lien: "/projects#serveur-web",
+    productions: ["Fiche de réalisation"],
+    competences: ["B1.1"],
+    complementaires: ["B2.2", "B3.5"],
+  },
+  {
+    titre: "Bases de données PostgreSQL et Oracle",
+    contexte: "Projet de formation",
+    periode: "2024 – 2026",
+    lien: "/projects#bases-de-donnees",
+    productions: ["Fiche de réalisation"],
+    competences: ["B1.1", "B1.2"],
+    complementaires: ["B2.3", "B3.4"],
+  },
+  {
+    titre: "Portfolio et veille technologique",
+    contexte: "Projet personnel",
+    periode: "Novembre 2026 – en cours",
+    lien: "/",
+    productions: ["Ce site (portfolio)", "Veille technologique publiée sur le site"],
+    competences: ["B1.3", "B1.6"],
+    complementaires: [],
+  },
+];
 ---
 
-<BaseLayout title="Parcours" sideBarActiveItemID="cv">
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Profil</div>
+<BaseLayout title="Synthèse" sideBarActiveItemID="synthese">
+  <div class="pb-6 mt-5">
+    <div class="text-5xl font-bold">Tableau de synthèse</div>
+    <p class="text-lg py-3">
+      Récapitulatif de mes réalisations professionnelles, avec les compétences du bloc « Support et mise à disposition de
+      services informatiques » qu'elles mobilisent.
+    </p>
   </div>
 
-  <div class="mb-10 text-justify">
-    Étudiant en BTS SIO option SISR (Solutions d'infrastructure, systèmes et réseaux), j'ai commencé mes études
-    supérieures en Systèmes et Réseaux Informatiques à l'École polytechnique de Lomé, au Togo, avant de poursuivre en France. Passionné par les réseaux et les
-    systèmes, je me forme à l'administration d'infrastructures à travers des projets pratiques : Active Directory,
-    stockage en réseau, hotspot Wi-Fi, authentification par badge RFID.
+  <div class="overflow-x-auto mb-10">
+    <table class="table table-zebra">
+      <thead>
+        <tr>
+          <th>Réalisation</th>
+          <th>Période</th>
+          <th>Productions et documents associés</th>
+          {competences.map((c) => <th class="text-center" title={c.label}>{c.code}</th>)}
+        </tr>
+      </thead>
+      <tbody>
+        {
+          realisations.map((r) => (
+            <tr>
+              <td>
+                <a href={r.lien} class="font-bold underline">{r.titre}</a>
+                <div class="text-sm opacity-70">{r.contexte}</div>
+              </td>
+              <td class="whitespace-nowrap">{r.periode}</td>
+              <td>
+                <ul class="list-disc ml-4">
+                  {r.productions.map((prod) => <li>{prod}</li>)}
+                </ul>
+              </td>
+              {competences.map((c) => (
+                <td class="text-center text-xl">{r.competences.includes(c.code) ? "●" : ""}</td>
+              ))}
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
   </div>
 
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Formation</div>
-  </div>
+  <div class="text-2xl font-bold mb-3">Légende</div>
+  <ul class="grid gap-2 mb-10">
+    {
+      competences.map((c) => (
+        <li>
+          <b>{c.code}</b> : {c.label}
+        </li>
+      ))
+    }
+  </ul>
 
-  <div class="time-line-container grid gap-4 mb-10">
-    <TimeLineElement
-      title="BTS SIO option SISR (2e année)"
-      subtitle="2026 – en cours, Lycée La Joliverie, Saint-Sébastien-sur-Loire, France"
-    />
-    <TimeLineElement
-      title="Cycle licence en Systèmes et Réseaux Informatiques (SRI), système LMD"
-      subtitle="2024 – 2026, École polytechnique de Lomé, Lomé, Togo"
-    />
-    <!-- À VÉRIFIER : établissement du BTS. -->
-  </div>
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Projets</div>
-  </div>
-
-  <div class="time-line-container mb-10">
-    <TimeLineElement
-      title="Hotspot Wi-Fi MikroTik : roaming et tickets d'accès"
-      subtitle="Projet personnel"
-    >
-      Centralisation du DHCP et du hotspot sur un routeur MikroTik, avec roaming entre bornes et génération de tickets
-      par un outil en Python. <a href="/projects#hotspot" class="underline">Voir la fiche</a>
-    </TimeLineElement>
-    <TimeLineElement
-      title="Active Directory, DHCP et DNS sous Windows Server"
-      subtitle="Projet de formation, École polytechnique de Lomé"
-    >
-      Mise en place d'un domaine Active Directory, d'un serveur DHCP et du DNS sur un serveur physique.
-      <a href="/projects#windows-server" class="underline">Voir la fiche</a>
-    </TimeLineElement>
-    <TimeLineElement
-      title="NAS avec OpenMediaVault sur Raspberry Pi"
-      subtitle="Projet de formation, École polytechnique de Lomé"
-    >
-      Déploiement d'un serveur de stockage en réseau. <a href="/projects#nas" class="underline">Voir la fiche</a>
-    </TimeLineElement>
-    <TimeLineElement
-      title="Authentification RFID et suivi des présences"
-      subtitle="Projet du cours de gestion de projet, École polytechnique de Lomé"
-    >
-      Système d'authentification par badge RFID basé sur Arduino, avec enregistrement des présences et des absences en
-      base de données. <a href="/projects#rfid" class="underline">Voir la fiche</a>
-    </TimeLineElement>
-  </div>
-
-  <!-- Section Certifications retirée : à ajouter ici si tu en obtiens (modèle : <ul class="list-disc mx-6 mb-10 grid gap-2"><li>Nom</li></ul>) -->
-  <!-- Section Langues à ajouter une fois tes niveaux confirmés (français, anglais...). -->
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Compétences</div>
-  </div>
-
-  <p class="mb-6 opacity-80">
-    Compétences du référentiel du BTS SIO option SISR, avec les réalisations qui les illustrent.
+  <div class="text-3xl font-bold mb-3">Compétences complémentaires de l'option SISR</div>
+  <p class="mb-4 opacity-80">
+    Les mêmes réalisations mobilisent aussi des compétences d'administration des systèmes et des réseaux (bloc 2) et de
+    cybersécurité (bloc 3).
   </p>
 
-  <div class="mb-3 text-xl font-bold">Bloc 2 : Administration des systèmes et des réseaux</div>
-  <ul class="list-disc mx-6 mb-8 grid gap-3">
-    <li>
-      <b>Concevoir une solution d'infrastructure réseau.</b> Organiser les composants d'une infrastructure à partir d'un
-      besoin : centralisation du DHCP et du hotspot avec roaming entre plusieurs bornes (MikroTik), domaine Active
-      Directory associé à des services DHCP et DNS.
-      <a href="/projects#hotspot" class="underline">Hotspot MikroTik</a>,
-      <a href="/projects#windows-server" class="underline">Active Directory</a>.
-    </li>
-    <li>
-      <b>Installer, tester et déployer une solution d'infrastructure réseau.</b> Mettre en service et valider des
-      services sur serveur physique, machine virtuelle ou carte embarquée : Windows Server (Active Directory, DHCP,
-      DNS), serveur web Apache sous Debian, NAS OpenMediaVault sur Raspberry Pi, routeurs convertis en points d'accès, labs Cisco sous GNS3 (VLAN,
-      routage inter-VLAN, DHCP avec relais).
-      <a href="/projects#windows-server" class="underline">Active Directory</a>,
-      <a href="/projects#nas" class="underline">NAS</a>.
-    </li>
-    <li>
-      <b>Exploiter, dépanner et superviser une solution d'infrastructure réseau.</b> Maintenir un service dans la durée :
-      profils d'accès par durée et suppression automatique des comptes expirés par scripts sur le routeur, diagnostic
-      de pannes (par exemple un blocage de pare-feu entre deux nœuds d'un cluster Windows).
-      <a href="/projects#hotspot" class="underline">Hotspot MikroTik</a>.
-    </li>
-  </ul>
+  <div class="overflow-x-auto mb-6">
+    <table class="table table-zebra">
+      <thead>
+        <tr>
+          <th>Réalisation</th>
+          {complementaires.map((c) => <th class="text-center" title={c.label}>{c.code}</th>)}
+        </tr>
+      </thead>
+      <tbody>
+        {
+          realisations
+            .filter((r) => r.complementaires.length > 0)
+            .map((r) => (
+              <tr>
+                <td>
+                  <a href={r.lien} class="font-bold underline">{r.titre}</a>
+                </td>
+                {complementaires.map((c) => (
+                  <td class="text-center text-xl">{r.complementaires.includes(c.code) ? "●" : ""}</td>
+                ))}
+              </tr>
+            ))
+        }
+      </tbody>
+    </table>
+  </div>
 
-  <div class="mb-3 text-xl font-bold">Bloc 1 : Support et mise à disposition de services informatiques</div>
-  <ul class="list-disc mx-6 mb-8 grid gap-3">
-    <li>
-      <b>Mettre à disposition des utilisateurs un service informatique.</b> Rendre un service réellement utilisable :
-      accès Wi-Fi par tickets avec un outil de génération de bons PDF, stockage réseau (NAS), authentification
-      centralisée par annuaire.
-    </li>
-    <li>
-      <b>Travailler en mode projet.</b> Projets menés en équipe, dont le système de présence par badge RFID réalisé dans
-      le cadre du cours de gestion de projet.
-      <a href="/projects#rfid" class="underline">Authentification RFID</a>.
-    </li>
+  <ul class="grid gap-2 mb-10">
+    {
+      complementaires.map((c) => (
+        <li>
+          <b>{c.code}</b> : {c.label}
+        </li>
+      ))
+    }
   </ul>
-
-  <div class="mb-3 text-xl font-bold">Bloc 3 : Cybersécurité des services informatiques</div>
-  <ul class="list-disc mx-6 mb-8 grid gap-3">
-    <li>
-      <b>Garantir la disponibilité, l'intégrité et la confidentialité des services informatiques et des données.</b>
-      Protéger les données par des sauvegardes programmées, à froid et à chaud, avec Oracle (RMAN), et restaurer une
-      base après une panne simulée, avec gestion des incidents et prévention des pannes.
-      <a href="/projects#bases-de-donnees" class="underline">Bases de données</a>.
-    </li>
-    <li>
-      <b>Assurer la cybersécurité d'une infrastructure réseau, d'un système, d'un service.</b> Contrôle d'accès et
-      authentification (annuaire Active Directory, badges RFID), gestion des utilisateurs, des droits et des accès sur
-      un serveur web Apache, sécurisation des accès d'administration des équipements Cisco (SSH à la place de Telnet).
-      <a href="/projects#serveur-web" class="underline">Serveur web</a>.
-    </li>
-  </ul>
-
-  <div class="mb-3 text-xl font-bold">Compétences complémentaires</div>
-  <ul class="list-disc mx-6 grid gap-3">
-    <li>
-      <b>Administrer un système Linux.</b> Installation et configuration d'un serveur web Apache sous Debian, création
-      d'utilisateurs et contrôle de leurs droits (<code>adduser</code>, <code>chown</code>, <code>chmod</code>).
-      <a href="/projects#serveur-web" class="underline">Serveur web</a>.
-    </li>
-    <li>
-      <b>Administrer des bases de données.</b> SQL et manipulation d'une base avec PostgreSQL ; sauvegarde, restauration
-      et modes de démarrage avec Oracle. Dans le projet RFID, base enregistrant les présences et les absences.
-      <a href="/projects#bases-de-donnees" class="underline">Bases de données</a>.
-    </li>
-    <li>
-      <b>Automatiser l'administration par scripts.</b> PowerShell pour les tâches d'administration Windows, Python pour
-      les outils internes (génération de tickets PDF avec interface graphique).
-    </li>
-  </ul>
-  <!-- À VÉRIFIER : intitulés exacts dans l'annexe I b du référentiel du BTS SIO. À PRÉCISER avec un exemple concret pour Linux, bases de données et PowerShell (le jury peut demander). -->
+  <!-- À FAIRE : joindre aussi le modèle officiel de tableau de synthèse (fichier Excel de la circulaire nationale) renseigné avec les mêmes informations. À COMPLÉTER : périodes exactes, productions et documents réels de chaque réalisation (schémas, rapports, scripts). Vérifier les intitulés avec le référentiel officiel. -->
 </BaseLayout>
