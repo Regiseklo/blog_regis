@@ -11,46 +11,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </p>
   </div>
 
-   <!-- ============ 2. WINDOWS SERVER ============ -->
-  <article id="windows-server" class="card bg-base-200 p-6 mb-8 scroll-mt-20">
-    <div class="flex items-center gap-3 flex-wrap">
-      <h2 class="text-2xl font-bold">Active Directory, DHCP et DNS sous Windows Server</h2>
-      <span class="badge badge-neutral">SYSTÈME</span>
-    </div>
-    <p class="mt-2 opacity-80"><b>Contexte :</b> projet de formation à l'École polytechnique de Lomé.</p>
-
-    <h3 class="text-lg font-bold mt-4">Ce que j'ai réalisé</h3>
-    <ul class="list-disc ml-6 mt-1 space-y-1">
-      <li>Mise en place d'un domaine Active Directory.</li>
-      <li>Configuration d'un serveur DHCP pour l'attribution automatique des adresses.</li>
-      <li>Configuration du service DNS.</li>
-      <li>Déploiement de l'ensemble sur un serveur physique.</li>
-    </ul>
-
-    <h3 class="text-lg font-bold mt-4">Outils</h3>
-    <p>Windows Server, Active Directory (AD DS), DHCP, DNS.</p>
-    <!-- À COMPLÉTER : nom du domaine, nombre de postes clients, résultat, captures d'écran. -->
-  </article>
-
-   <!-- ============ 3. NAS ============ -->
-  <article id="nas" class="card bg-base-200 p-6 mb-8 scroll-mt-20">
-    <div class="flex items-center gap-3 flex-wrap">
-      <h2 class="text-2xl font-bold">NAS avec OpenMediaVault sur Raspberry Pi</h2>
-      <span class="badge badge-neutral">STOCKAGE</span>
-    </div>
-    <p class="mt-2 opacity-80"><b>Contexte :</b> projet de formation à l'École polytechnique de Lomé, réalisé en équipe.</p>
-
-    <h3 class="text-lg font-bold mt-4">Ce que j'ai réalisé</h3>
-    <ul class="list-disc ml-6 mt-1 space-y-1">
-      <li>Déploiement d'un serveur de stockage en réseau (NAS) à partir d'OpenMediaVault, installé sur un Raspberry Pi.</li>
-    </ul>
-
-    <h3 class="text-lg font-bold mt-4">Outils</h3>
-    <p>OpenMediaVault, Raspberry Pi.</p>
-    <!-- À COMPLÉTER : ce que tu as fait précisément (disques, partages, utilisateurs...), résultat, captures d'écran. -->
-  </article>
-
-
   <!-- ============ 1. HOTSPOT MIKROTIK ============ -->
   <article id="hotspot" class="card bg-base-200 p-6 mb-8 scroll-mt-20">
     <div class="flex items-center gap-3 flex-wrap">
@@ -72,7 +32,45 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <!-- À COMPLÉTER : résultat obtenu + captures d'écran (config hotspot, ticket PDF, interface). Vérifier que le roaming est bien terminé avant l'oral. -->
   </article>
 
- 
+  <!-- ============ 2. WINDOWS SERVER ============ -->
+  <article id="windows-server" class="card bg-base-200 p-6 mb-8 scroll-mt-20">
+    <div class="flex items-center gap-3 flex-wrap">
+      <h2 class="text-2xl font-bold">Active Directory, DHCP et DNS sous Windows Server</h2>
+      <span class="badge badge-neutral">SYSTÈME</span>
+    </div>
+    <p class="mt-2 opacity-80"><b>Contexte :</b> projet de formation à l'École polytechnique de Lomé.</p>
+
+    <h3 class="text-lg font-bold mt-4">Ce que j'ai réalisé</h3>
+    <ul class="list-disc ml-6 mt-1 space-y-1">
+      <li>Mise en place d'un domaine Active Directory.</li>
+      <li>Configuration d'un serveur DHCP pour l'attribution automatique des adresses.</li>
+      <li>Configuration du service DNS.</li>
+      <li>Déploiement de l'ensemble sur un serveur physique.</li>
+    </ul>
+
+    <h3 class="text-lg font-bold mt-4">Outils</h3>
+    <p>Windows Server, Active Directory (AD DS), DHCP, DNS.</p>
+    <!-- À COMPLÉTER : nom du domaine, nombre de postes clients, résultat, captures d'écran. -->
+  </article>
+
+  <!-- ============ 3. NAS ============ -->
+  <article id="nas" class="card bg-base-200 p-6 mb-8 scroll-mt-20">
+    <div class="flex items-center gap-3 flex-wrap">
+      <h2 class="text-2xl font-bold">NAS avec OpenMediaVault sur Raspberry Pi</h2>
+      <span class="badge badge-neutral">STOCKAGE</span>
+    </div>
+    <p class="mt-2 opacity-80"><b>Contexte :</b> projet de formation à l'École polytechnique de Lomé, réalisé en équipe.</p>
+
+    <h3 class="text-lg font-bold mt-4">Ce que j'ai réalisé</h3>
+    <ul class="list-disc ml-6 mt-1 space-y-1">
+      <li>Déploiement d'un serveur de stockage en réseau (NAS) à partir d'OpenMediaVault, installé sur un Raspberry Pi.</li>
+    </ul>
+
+    <h3 class="text-lg font-bold mt-4">Outils</h3>
+    <p>OpenMediaVault, Raspberry Pi.</p>
+    <!-- À COMPLÉTER : ce que tu as fait précisément (disques, partages, utilisateurs...), résultat, captures d'écran. -->
+  </article>
+
   <!-- ============ 4. RFID ============ -->
   <article id="rfid" class="card bg-base-200 p-6 mb-8 scroll-mt-20">
     <div class="flex items-center gap-3 flex-wrap">
@@ -90,5 +88,100 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <h3 class="text-lg font-bold mt-4">Outils</h3>
     <p>Arduino, lecteur RFID, base de données.</p>
     <!-- À COMPLÉTER : confirmer la carte (Arduino seul ? ESP32 ?), le langage et le type de base de données, le résultat, les captures. -->
+  </article>
+
+  <!-- ============ 5. SERVEUR WEB APACHE ============ -->
+  <article id="serveur-web" class="card bg-base-200 p-6 mb-8 scroll-mt-20">
+    <div class="flex items-center gap-3 flex-wrap">
+      <h2 class="text-2xl font-bold">Serveur web Apache sous Debian</h2>
+      <span class="badge badge-neutral">SYSTÈME</span>
+    </div>
+    <p class="mt-2 opacity-80"><b>Contexte :</b> travaux pratiques de formation, réalisés en équipe. Le serveur a été configuré et testé, sans hébergement d'un site.</p>
+
+    <h3 class="text-lg font-bold mt-4">Ce que j'ai réalisé</h3>
+    <ul class="list-disc ml-6 mt-1 space-y-1">
+      <li>Installation et configuration d'un serveur web Apache sur un système Debian, validées avec la page par défaut d'Apache.</li>
+      <li>Création d'utilisateurs sur le système.</li>
+      <li>Contrôle des droits des utilisateurs sur les fichiers et les répertoires.</li>
+    </ul>
+
+    <h3 class="text-lg font-bold mt-4">Méthode : gérer utilisateurs et droits sous Debian</h3>
+    <ol class="list-decimal ml-6 mt-1 space-y-1">
+      <li>Créer le compte avec <code>adduser utilisateur</code>.</li>
+      <li>Si besoin, l'ajouter à un groupe pour lui donner des droits communs : <code>adduser utilisateur groupe</code>.</li>
+      <li>Définir le propriétaire et le groupe d'un fichier ou d'un répertoire : <code>chown</code> et <code>chgrp</code>.</li>
+      <li>Régler les permissions pour le propriétaire (u), le groupe (g) et les autres (o) avec <code>chmod</code>, en notation symbolique (<code>u=rwx,g=rx,o=</code>) ou octale (<code>750</code>).</li>
+      <li>Vérifier le résultat avec <code>ls -l</code>, puis en testant avec le compte concerné.</li>
+    </ol>
+
+    <h3 class="text-lg font-bold mt-4">Notions clés</h3>
+    <ul class="list-disc ml-6 mt-1 space-y-1">
+      <li>Apache s'installe avec le paquet <code>apache2</code>. Par défaut, il écoute sur le port 80 et publie les pages du dossier <code>/var/www/html/</code>.</li>
+      <li>Apache s'exécute sous l'utilisateur système <code>www-data</code> : les droits sur les fichiers déterminent ce qu'il peut lire ou modifier. Un utilisateur aux droits limités réduit les risques en cas de faille (principe du moindre privilège).</li>
+      <li>Chaque site est décrit par un hôte virtuel (fichier dans <code>/etc/apache2/sites-available/</code>), activé avec <code>a2ensite</code>.</li>
+      <li>Apache peut aussi restreindre l'accès à un répertoire avec la directive <code>Require</code> (par exemple par adresse IP) ou par mot de passe (authentification de base, fichier créé avec <code>htpasswd</code>).</li>
+    </ul>
+
+    <h3 class="text-lg font-bold mt-4">Outils</h3>
+    <p>Debian, Apache, commandes d'administration Linux.</p>
+    <!-- À VÉRIFIER AVANT L'ORAL : ne garder que ce que tu as réellement fait ou sais expliquer (surtout la dernière notion sur Require/htpasswd, non confirmée). À COMPLÉTER : les utilisateurs et droits créés (exemple concret), captures d'écran de la page par défaut et de ls -l. -->
+  </article>
+
+  <!-- ============ 6. BASES DE DONNEES ============ -->
+  <article id="bases-de-donnees" class="card bg-base-200 p-6 mb-8 scroll-mt-20">
+    <div class="flex items-center gap-3 flex-wrap">
+      <h2 class="text-2xl font-bold">Bases de données : PostgreSQL et Oracle</h2>
+      <span class="badge badge-neutral">DONNÉES</span>
+    </div>
+    <p class="mt-2 opacity-80"><b>Contexte :</b> travaux pratiques de formation, réalisés en équipe.</p>
+
+    <h3 class="text-lg font-bold mt-4">Ce que j'ai réalisé</h3>
+    <ul class="list-disc ml-6 mt-1 space-y-1">
+      <li><b>PostgreSQL :</b> apprentissage du langage SQL et manipulation d'une base de données.</li>
+      <li><b>Oracle :</b> sauvegarde et restauration avec RMAN : sauvegardes programmées, à froid et à chaud.</li>
+      <li>Restauration d'une base après une panne simulée.</li>
+      <li>Utilisation des différents modes de démarrage d'Oracle.</li>
+      <li>Gestion des incidents et prévention des pannes.</li>
+    </ul>
+
+    <h3 class="text-lg font-bold mt-4">Notions clés</h3>
+
+    <p class="mt-2"><b>Les modes de démarrage d'Oracle.</b> Une base démarre par étapes :</p>
+    <ul class="list-disc ml-6 mt-1 space-y-1">
+      <li><code>NOMOUNT</code> : l'instance est démarrée (mémoire et processus), mais aucune base n'y est associée. Étape utile à la création d'une base et à certaines opérations de sauvegarde et de restauration.</li>
+      <li><code>MOUNT</code> : le fichier de contrôle est ouvert. L'instance connaît la structure de la base, mais les données ne sont pas accessibles aux utilisateurs.</li>
+      <li><code>OPEN</code> : la base est ouverte, les utilisateurs peuvent l'utiliser. C'est ce que fait un <code>STARTUP</code> sans option.</li>
+    </ul>
+    <p class="mt-2">À l'inverse, <code>SHUTDOWN</code> existe en quatre modes : <code>NORMAL</code>, <code>TRANSACTIONAL</code>, <code>IMMEDIATE</code> et <code>ABORT</code>. Ce dernier est un arrêt brutal, qui ressemble à une panne.</p>
+
+    <p class="mt-4"><b>Restaurer et recouvrer.</b> Avec RMAN, la restauration (<code>RESTORE</code>) remet en place les fichiers sauvegardés, puis la récupération (<code>RECOVER</code>) rejoue les journaux de transactions pour revenir à l'état de la base au moment de la panne.</p>
+
+    <p class="mt-4"><b>Sauvegardes à froid et à chaud :</b></p>
+    <div class="overflow-x-auto mt-2">
+      <table class="table table-zebra">
+        <thead>
+          <tr><th></th><th>Oracle</th><th>PostgreSQL</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>À froid</th>
+            <td>Base fermée, copie des fichiers : sauvegarde cohérente (« closed backup »). La base est indisponible pendant l'opération.</td>
+            <td>Serveur arrêté, copie des fichiers de données (sauvegarde au niveau du système de fichiers).</td>
+          </tr>
+          <tr>
+            <th>À chaud</th>
+            <td>Base ouverte et utilisable pendant la sauvegarde, en mode <code>ARCHIVELOG</code> (les journaux de transactions sont archivés). Outil : RMAN.</td>
+            <td>Archivage continu des journaux WAL avec une sauvegarde de base (<code>pg_basebackup</code>). L'export logique <code>pg_dump</code> peut aussi être lancé base en fonctionnement.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="mt-4"><b>Sauvegarde programmée :</b> lancée automatiquement à heure fixe par un planificateur de tâches (par exemple <code>cron</code> sous Linux).</p>
+    <p class="mt-2"><b>Prévention des pannes :</b> une sauvegarde n'est fiable que si elle est vérifiée régulièrement par un test de restauration.</p>
+
+    <h3 class="text-lg font-bold mt-4">Outils</h3>
+    <p>Oracle (RMAN), PostgreSQL (SQL, <code>pg_dump</code>).</p>
+    <!-- À VÉRIFIER AVANT L'ORAL : "pg_dump" est mon hypothèse pour l'outil PostgreSQL cité de mémoire (pcdump ?). Ne garder que ce que tu as fait ou sais expliquer. À CONFIRMER : le terme "sauvegardes paires et impaires" n'est pas un terme standard, il a été retiré. À COMPLÉTER : la panne simulée (ce qui a été cassé, comment restauré), les commandes RMAN utilisées, captures d'écran. -->
   </article>
 </BaseLayout>

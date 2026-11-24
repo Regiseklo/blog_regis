@@ -88,7 +88,7 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     <li>
       <b>Installer, tester et déployer une solution d'infrastructure réseau.</b> Mettre en service et valider des
       services sur serveur physique, machine virtuelle ou carte embarquée : Windows Server (Active Directory, DHCP,
-      DNS), NAS OpenMediaVault sur Raspberry Pi, routeurs convertis en points d'accès, labs Cisco sous GNS3 (VLAN,
+      DNS), serveur web Apache sous Debian, NAS OpenMediaVault sur Raspberry Pi, routeurs convertis en points d'accès, labs Cisco sous GNS3 (VLAN,
       routage inter-VLAN, DHCP avec relais).
       <a href="/projects#windows-server" class="underline">Active Directory</a>,
       <a href="/projects#nas" class="underline">NAS</a>.
@@ -118,21 +118,30 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   <div class="mb-3 text-xl font-bold">Bloc 3 : Cybersécurité des services informatiques</div>
   <ul class="list-disc mx-6 mb-8 grid gap-3">
     <li>
+      <b>Garantir la disponibilité, l'intégrité et la confidentialité des services informatiques et des données.</b>
+      Protéger les données par des sauvegardes programmées, à froid et à chaud, avec Oracle (RMAN), et restaurer une
+      base après une panne simulée, avec gestion des incidents et prévention des pannes.
+      <a href="/projects#bases-de-donnees" class="underline">Bases de données</a>.
+    </li>
+    <li>
       <b>Assurer la cybersécurité d'une infrastructure réseau, d'un système, d'un service.</b> Contrôle d'accès et
-      authentification (annuaire Active Directory, badges RFID), sécurisation des accès d'administration des
-      équipements Cisco (SSH à la place de Telnet).
+      authentification (annuaire Active Directory, badges RFID), gestion des utilisateurs, des droits et des accès sur
+      un serveur web Apache, sécurisation des accès d'administration des équipements Cisco (SSH à la place de Telnet).
+      <a href="/projects#serveur-web" class="underline">Serveur web</a>.
     </li>
   </ul>
 
   <div class="mb-3 text-xl font-bold">Compétences complémentaires</div>
   <ul class="list-disc mx-6 grid gap-3">
     <li>
-      <b>Administrer un système Linux.</b> Installer et configurer un système, gérer les utilisateurs, les services et le
-      réseau.
+      <b>Administrer un système Linux.</b> Installation et configuration d'un serveur web Apache sous Debian, création
+      d'utilisateurs et contrôle de leurs droits (<code>adduser</code>, <code>chown</code>, <code>chmod</code>).
+      <a href="/projects#serveur-web" class="underline">Serveur web</a>.
     </li>
     <li>
-      <b>Administrer une base de données.</b> Concevoir et gérer une base : dans le projet RFID, base enregistrant les
-      présences et les absences.
+      <b>Administrer des bases de données.</b> SQL et manipulation d'une base avec PostgreSQL ; sauvegarde, restauration
+      et modes de démarrage avec Oracle. Dans le projet RFID, base enregistrant les présences et les absences.
+      <a href="/projects#bases-de-donnees" class="underline">Bases de données</a>.
     </li>
     <li>
       <b>Automatiser l'administration par scripts.</b> PowerShell pour les tâches d'administration Windows, Python pour
