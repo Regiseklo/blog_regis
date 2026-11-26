@@ -1,35 +1,44 @@
 [
   {
     "date": "2026-11-26",
+    "type": "daily",
     "file": "2026-11-26.md",
     "articles": [
       {
+        "titre": "De fausses interviews d'experts rémunérées usurpent des marques pour voler les identifiants Google",
         "title": "Fake paid expert interviews impersonate brands to steal Google logins",
         "source": "BleepingComputer",
         "link": "https://www.bleepingcomputer.com/news/apple/fake-paid-expert-interviews-impersonate-brands-to-steal-google-logins/",
-        "resume": "Une campagne de phishing en cours appelée 'GoodGuys' usurpe l'identité de grandes marques pour voler des identifiants Google et Okta d'entreprise. Les pirates utilisent de fausses invitations à des entretiens d'experts rémunérés et des webinaires.",
-        "impact": "Cela oblige l'administrateur réseau à renforcer la sensibilisation des utilisateurs contre le phishing ciblé et à surveiller étroitement les accès aux identifiants d'authentification."
+        "published": "2026-11-26",
+        "resume": "Une campagne de phishing en cours, appelée 'GoodGuys', se fait passer pour de grandes entreprises comme Google, Nvidia, Accenture et SpaceX. Elle utilise de fausses invitations à des entretiens d'experts et des webinaires pour dérober des identifiants Google et Okta d'entreprise.",
+        "impact": "L'administrateur réseau doit renforcer la sensibilisation des collaborateurs face aux campagnes de phishing ciblées par usurpation de marques."
       },
       {
+        "titre": "Le malware Remus vole des messages Gmail via une fausse extension Google Sheets",
+        "title": "Remus malware steals Gmail messages via fake Google Sheets extension",
+        "source": "BleepingComputer",
+        "link": "https://www.bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension/",
+        "published": "2026-11-26",
+        "resume": "Le voleur d'informations Remus dérobe des messages Gmail grâce à une extension Chrome malveillante et furtive. Cette capacité était commercialisée par les opérateurs du malware comme une exploitation zero-day du service de messagerie de Google.",
+        "impact": "Ce type de menace oblige l'équipe infrastructure à restreindre et surveiller étroitement l'installation d'extensions de navigateur sur les postes de travail."
+      },
+      {
+        "titre": "Palo Alto Networks met en garde contre la faille Fragnesia exploitée dans des attaques PAN-OS",
         "title": "Palo Alto Networks warns of Fragnesia flaw exploited in PAN-OS attacks",
         "source": "BleepingComputer",
         "link": "https://www.bleepingcomputer.com/news/security/palo-alto-networks-warns-of-fragnesia-flaw-exploited-in-pan-os-attacks/",
-        "resume": "Des cybercriminels enchaînent des exploits ciblant les vulnérabilités PHP2Shell et Fragnesia pour attaquer des équipements Palo Alto Networks. Ces attaques visent spécifiquement les appareils dont les interfaces de gestion sont exposées sur Internet.",
-        "impact": "Cela rappelle à l'administrateur réseau qu'il ne faut jamais exposer les interfaces de gestion directement sur Internet et qu'il faut appliquer rapidement les correctifs de sécurité."
+        "published": "2026-11-25",
+        "resume": "Des cybercriminels enchaînent des exploits ciblant les vulnérabilités PHP2Shell et Fragnesia. Ils visent les équipements Palo Alto Networks dont les interfaces de gestion sont exposées sur Internet.",
+        "impact": "Pour un administrateur réseaux et systèmes, cela souligne l'urgence absolue de sécuriser l'accès aux interfaces de gestion et d'appliquer rapidement les correctifs de sécurité."
       },
       {
-        "title": "1Password customer data stolen after employee GitHub account breach",
-        "source": "BleepingComputer",
-        "link": "https://www.bleepingcomputer.com/news/security/1password-customer-data-stolen-after-employee-github-account-breach/",
-        "resume": "1Password a subi une violation de données après le piratage du compte GitHub d'un employé. Ce compte a été utilisé pour déployer du code malveillant dans les services backend afin de voler des données clients.",
-        "impact": "Cela montre à l'administrateur réseau l'importance cruciale de sécuriser et de surveiller l'accès aux comptes des collaborateurs sur les plateformes de développement."
-      },
-      {
+        "titre": "L'Italie et la Suisse mettent en garde contre des cyberattaques autonomes pilotées par l'IA",
         "title": "Italy and Switzerland warn of autonomous AI-driven cyberattacks",
         "source": "BleepingComputer",
         "link": "https://www.bleepingcomputer.com/news/security/italy-and-switzerland-warn-of-autonomous-ai-driven-cyberattacks/",
-        "resume": "Les agences de cybersécurité suisse et italienne mettent en garde contre des cyberattaques automatisées pilotées par l'intelligence artificielle. Ces attaques ciblent les organisations du secteur des infrastructures critiques.",
-        "impact": "Cela oblige l'administrateur réseau à adapter la défense des infrastructures en intégrant des outils de détection automatisés et proactifs face à des menaces plus rapides et sophistiquées."
+        "published": "2026-11-25",
+        "resume": "Les agences de cybersécurité suisse et italienne alertent sur des cyberattaques automatisées alimentées par des agents intelligents. Ces attaques ciblent particulièrement les organisations du secteur des infrastructures critiques.",
+        "impact": "L'évolution des menaces automatisées pousse l'administrateur à intégrer des outils de défense proactive basés sur l'intelligence artificielle pour contrer la vitesse d'exécution de ces attaques."
       }
     ]
   }
