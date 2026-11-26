@@ -1,80 +1,152 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import veille from "../../veille/index.json";
 
-// Les fichiers veille/index.json sont écrits chaque jour par GitHub Actions (scripts/veille.py).
-const entries: any[] = veille;
+// Données générées chaque jour par scripts/veille.py (GitHub Actions) dans veille/index.json.
+// import.meta.glob évite une erreur de build si le fichier n'existe pas encore.
+const files = import.meta.glob("../../veille/index.json", { eager: true });
+const raw = Object.values(files)[0];
+const entries = ((raw && (raw.default ?? raw)) || []).slice().sort((a, b) => {
+  if (a.date !== b.date) return b.date.localeCompare(a.date);
+  return (a.type || "daily").localeCompare(b.type || "daily");
+});
 
-const fr = (iso: string) =>
-  new Date(iso).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+const fr = (d) => (d ? `${d.slice(8, 10)}/${d.slice(5, 7)}/${d.slice(0, 4)}` : "");
+const totalArticles = entries.reduce((n, e) => n + e.articles.length, 0);
+const derniere = entries.length > 0 ? entries[0].date : null;
+const recentes = entries.slice(0, 10);
+const archives = entries.slice(10);
+
+// À mettre à jour si les flux de scripts/veille.py changent
+const sources = [
+  { nom: "CERT-FR (alertes, actualités, menaces et incidents)", url: "https://www.cert.ssi.gouv.fr/" },
+  { nom: "BleepingComputer", url: "https://www.bleepingcomputer.com/" },
+  { nom: "Krebs on Security", url: "https://krebsonsecurity.com/" },
+];
 ---
 
-<BaseLayout sideBarActiveItemID="veille">
+<BaseLayout title="Veille technologique" sideBarActiveItemID="veille">
   <div class="pb-6 mt-5">
     <div class="text-5xl font-bold">Veille technologique</div>
     <p class="text-lg py-3">
-      Cybersécurité et évolution du métier d'administrateur réseau dans les infrastructures actuelles.
+      Thème : la cybersécurité et l'évolution du métier d'administrateur réseau dans les infrastructures actuelles.
     </p>
   </div>
 
-  <!-- ============ MÉTHODE ============ -->
-  <article id="methode" class="card bg-base-200 p-6 mb-8 scroll-mt-20">
-    <h2 class="text-2xl font-bold">Ma méthode de veille</h2>
-
-    <h3 class="text-lg font-bold mt-4">Sources suivies</h3>
-    <ul class="list-disc ml-6 mt-1 space-y-1">
-      <li><b>CERT-FR</b> (ANSSI) : alertes de sécurité, bulletins d'actualité et rapports sur les menaces.</li>
-      <li><b>BleepingComputer</b> et <b>Krebs on Security</b> : actualité des attaques, des failles et des fuites de données.</li>
-    </ul>
-
-    <h3 class="text-lg font-bold mt-4">Outil</h3>
-    <p class="mt-1">
-      Une tâche automatique GitHub Actions lit les flux RSS de ces sources chaque jour. Un modèle d'IA (Gemini) en
-      sélectionne les articles les plus utiles pour mon thème et en rédige un résumé, avec ce que cela change pour un
-      administrateur réseau. Le résultat est ajouté à cette page. Chaque exécution est datée dans l'historique GitHub.
-    </p>
-    <!-- À COMPLÉTER : pourquoi ces sources (fiabilité, officielles/spécialisées), tes mots-clés, comment tu relis et vérifies les articles (les résumés sont générés à partir du début de l'article), fréquence à laquelle tu les lis. -->
-  </article>
-
-  <!-- ============ VEILLES ============ -->
-  {entries.length === 0 && (
-    <p class="opacity-80 mb-8">Aucune veille publiée pour le moment.</p>
-  )}
-
-  {entries.map((entry, i) => (
-    <details class="card bg-base-200 p-6 mb-4 scroll-mt-20" id={`veille-${entry.type === "retrospective" ? "retro-" : ""}${entry.date}`} open={i === 0}>
-      <summary class="cursor-pointer flex items-center gap-3 flex-wrap">
-        <h2 class="text-2xl font-bold inline">
-          {entry.type === "retrospective" ? "Sélection rétrospective" : "Veille"} du {fr(entry.date)}
-        </h2>
-        <span class="badge badge-neutral">
-          {entry.type === "retrospective" ? "RÉTROSPECTIVE" : "QUOTIDIENNE"}
-        </span>
-        <span class="opacity-70">{entry.articles.length} articles</span>
-      </summary>
-
-      {entry.type === "retrospective" && (
-        <p class="mt-3 opacity-80">
-          Sélection réalisée le {fr(entry.date)} parmi des articles parus entre le {fr(entry.du)} et le {fr(entry.au)}.
-          Chaque article porte sa date de publication réelle.
-        </p>
-      )}
-
-      <div class="mt-4 space-y-6">
-        {entry.articles.map((a: any) => (
-          <div>
-            <h3 class="text-lg font-bold">
-              <a class="link" href={a.link} target="_blank" rel="noopener noreferrer">{a.titre || a.title}</a>
-            </h3>
-            <p class="mt-1 flex items-center gap-2 flex-wrap">
-              <span class="badge badge-outline">{a.source}</span>
-              {a.published && <span class="opacity-70">publié le {fr(a.published)}</span>}
-            </p>
-            <p class="mt-2">{a.resume}</p>
-            <p class="mt-1"><b>Pour un administrateur réseau :</b> {a.impact}</p>
-          </div>
-        ))}
+  <section class="card bg-base-200 p-6 mb-10">
+    <h2 class="text-2xl font-bold mb-3">Ma méthode de veille</h2>
+    <dl class="grid gap-3">
+      <div>
+        <dt class="font-bold">Objectif</dt>
+        <dd>
+          Repérer les menaces et les évolutions technologiques qui concernent l'administration des réseaux et des
+          systèmes, et renforcer mes compétences dans ce domaine.
+        </dd>
       </div>
-    </details>
-  ))}
+      <div>
+        <dt class="font-bold">Sources</dt>
+        <dd>
+          <ul class="list-disc ml-6">
+            {
+              sources.map((s) => (
+                <li>
+                  <a href={s.url} target="_blank" rel="noopener noreferrer" class="underline">{s.nom}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </dd>
+      </div>
+      <div>
+        <dt class="font-bold">Fréquence</dt>
+        <dd>Collecte automatique chaque jour, entre 6 h et 7 h (heure de Paris).</dd>
+      </div>
+      <div>
+        <dt class="font-bold">Outils</dt>
+        <dd>
+          Flux RSS des sources, script Python exécuté par GitHub Actions, résumé et tri par l'IA Gemini, publication
+          automatique sur ce site.
+        </dd>
+      </div>
+      <div>
+        <dt class="font-bold">Sélection</dt>
+        <dd>
+          Quelques articles par jour, au maximum deux par source, choisis pour leur utilité pour un administrateur
+          réseau. Les résumés sont générés par l'IA à partir des informations des flux : chaque article renvoie vers
+          sa source d'origine.
+        </dd>
+      </div>
+    </dl>
+    {
+      derniere && (
+        <p class="mt-4 opacity-80">
+          {totalArticles} articles sélectionnés dans {entries.length} publications. Dernière mise à jour le {fr(derniere)}.
+        </p>
+      )
+    }
+  </section>
+
+  {
+    entries.length === 0 && (
+      <p class="mb-10 opacity-80">La première veille sera publiée prochainement.</p>
+    )
+  }
+
+  {
+    recentes.map((e) => (
+      <section class="mb-10">
+        <h2 class="text-2xl font-bold mb-1">
+          {e.type === "retrospective" ? `Sélection rétrospective du ${fr(e.date)}` : `Veille du ${fr(e.date)}`}
+        </h2>
+        {e.type === "retrospective" && (
+          <p class="mb-4 opacity-80">
+            Articles parus entre le {fr(e.du)} et le {fr(e.au)}, sélectionnés le {fr(e.date)}. Chaque article porte sa
+            date de publication réelle.
+          </p>
+        )}
+        {e.articles.map((a) => (
+          <article class="card bg-base-200 p-5 mb-4">
+            <div class="flex flex-wrap items-center gap-2 text-sm opacity-80">
+              <span class="badge badge-neutral">{a.source}</span>
+              {a.published && <span>Publié le {fr(a.published)}</span>}
+            </div>
+            <h3 class="text-xl font-bold mt-2">{a.titre}</h3>
+            {a.title && a.title !== a.titre && <p class="text-sm opacity-70">Titre original : {a.title}</p>}
+            <p class="mt-2">{a.resume}</p>
+            <p class="mt-2">
+              <b>Pour un administrateur réseau :</b> {a.impact}
+            </p>
+            <p class="mt-3">
+              <a href={a.link} target="_blank" rel="noopener noreferrer" class="underline">
+                Lire l'article original
+              </a>
+            </p>
+          </article>
+        ))}
+      </section>
+    ))
+  }
+
+  {
+    archives.length > 0 && (
+      <details class="mb-10">
+        <summary class="text-2xl font-bold cursor-pointer">Archives ({archives.length} publications)</summary>
+        {archives.map((e) => (
+          <section class="mt-6">
+            <h2 class="text-xl font-bold mb-2">
+              {e.type === "retrospective" ? `Sélection rétrospective du ${fr(e.date)}` : `Veille du ${fr(e.date)}`}
+            </h2>
+            <ul class="list-disc ml-6 grid gap-1">
+              {e.articles.map((a) => (
+                <li>
+                  <a href={a.link} target="_blank" rel="noopener noreferrer" class="underline">{a.titre}</a>
+                  <span class="opacity-70"> ({a.source})</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </details>
+    )
+  }
+  <!-- À AJOUTER pour B1.6 : ta propre analyse (ce que tu retiens de la veille, tes besoins de formation, ton environnement d'apprentissage personnel). Vérifier que les flux de la liste "sources" correspondent à ceux de scripts/veille.py. -->
 </BaseLayout>

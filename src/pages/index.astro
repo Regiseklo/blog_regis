@@ -1,12 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
-import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug"
 
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const last_posts = posts.slice(0, 3);
+// Articles de veille générés par scripts/veille.py (GitHub Actions) dans veille/index.json
+const files = import.meta.glob("../../veille/index.json", { eager: true });
+const raw = Object.values(files)[0];
+const entries = (raw && (raw.default ?? raw)) || [];
+const latest = entries
+  .flatMap((e) => e.articles.map((a) => ({ ...a, date: e.date })))
+  .sort((a, b) => (b.published || b.date).localeCompare(a.published || a.date))
+  .slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
@@ -24,7 +27,7 @@ const last_posts = posts.slice(0, 3);
     </div>
     <div class="mt-8">
       <a class="btn" href="/projects"> Voir mes réalisations</a>
-      <a href="/blog/" class="btn btn-outline ml-5"> Ma veille technologique </a>
+      <a href="/veille" class="btn btn-outline ml-5"> Ma veille technologique </a>
     </div>
   </div>
 
@@ -91,18 +94,22 @@ const last_posts = posts.slice(0, 3);
   </div>
 
   {
-    last_posts.map((post) => (
+    latest.map((a) => (
       <>
         <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + createSlug(post.data.title, post.slug)}
-          target="_self"
-          badge={post.data.badge}
+          title={a.titre}
+          img="/post_img.webp"
+          desc={a.resume}
+          url={a.link}
+          target="_blank"
+          badge={a.source}
         />
         <div class="divider my-0" />
       </>
     ))
   }
+  {latest.length === 0 && <p class="opacity-70">La première veille sera publiée prochainement.</p>}
+  <div class="mt-4">
+    <a href="/veille" class="btn btn-outline">Voir toute la veille</a>
+  </div>
 </BaseLayout>
