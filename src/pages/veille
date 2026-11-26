@@ -1,0 +1,80 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import veille from "../../veille/index.json";
+
+// Les fichiers veille/index.json sont écrits chaque jour par GitHub Actions (scripts/veille.py).
+const entries: any[] = veille;
+
+const fr = (iso: string) =>
+  new Date(iso).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+---
+
+<BaseLayout sideBarActiveItemID="veille">
+  <div class="pb-6 mt-5">
+    <div class="text-5xl font-bold">Veille technologique</div>
+    <p class="text-lg py-3">
+      Cybersécurité et évolution du métier d'administrateur réseau dans les infrastructures actuelles.
+    </p>
+  </div>
+
+  <!-- ============ MÉTHODE ============ -->
+  <article id="methode" class="card bg-base-200 p-6 mb-8 scroll-mt-20">
+    <h2 class="text-2xl font-bold">Ma méthode de veille</h2>
+
+    <h3 class="text-lg font-bold mt-4">Sources suivies</h3>
+    <ul class="list-disc ml-6 mt-1 space-y-1">
+      <li><b>CERT-FR</b> (ANSSI) : alertes de sécurité, bulletins d'actualité et rapports sur les menaces.</li>
+      <li><b>BleepingComputer</b> et <b>Krebs on Security</b> : actualité des attaques, des failles et des fuites de données.</li>
+    </ul>
+
+    <h3 class="text-lg font-bold mt-4">Outil</h3>
+    <p class="mt-1">
+      Une tâche automatique GitHub Actions lit les flux RSS de ces sources chaque jour. Un modèle d'IA (Gemini) en
+      sélectionne les articles les plus utiles pour mon thème et en rédige un résumé, avec ce que cela change pour un
+      administrateur réseau. Le résultat est ajouté à cette page. Chaque exécution est datée dans l'historique GitHub.
+    </p>
+    <!-- À COMPLÉTER : pourquoi ces sources (fiabilité, officielles/spécialisées), tes mots-clés, comment tu relis et vérifies les articles (les résumés sont générés à partir du début de l'article), fréquence à laquelle tu les lis. -->
+  </article>
+
+  <!-- ============ VEILLES ============ -->
+  {entries.length === 0 && (
+    <p class="opacity-80 mb-8">Aucune veille publiée pour le moment.</p>
+  )}
+
+  {entries.map((entry, i) => (
+    <details class="card bg-base-200 p-6 mb-4 scroll-mt-20" id={`veille-${entry.type === "retrospective" ? "retro-" : ""}${entry.date}`} open={i === 0}>
+      <summary class="cursor-pointer flex items-center gap-3 flex-wrap">
+        <h2 class="text-2xl font-bold inline">
+          {entry.type === "retrospective" ? "Sélection rétrospective" : "Veille"} du {fr(entry.date)}
+        </h2>
+        <span class="badge badge-neutral">
+          {entry.type === "retrospective" ? "RÉTROSPECTIVE" : "QUOTIDIENNE"}
+        </span>
+        <span class="opacity-70">{entry.articles.length} articles</span>
+      </summary>
+
+      {entry.type === "retrospective" && (
+        <p class="mt-3 opacity-80">
+          Sélection réalisée le {fr(entry.date)} parmi des articles parus entre le {fr(entry.du)} et le {fr(entry.au)}.
+          Chaque article porte sa date de publication réelle.
+        </p>
+      )}
+
+      <div class="mt-4 space-y-6">
+        {entry.articles.map((a: any) => (
+          <div>
+            <h3 class="text-lg font-bold">
+              <a class="link" href={a.link} target="_blank" rel="noopener noreferrer">{a.titre || a.title}</a>
+            </h3>
+            <p class="mt-1 flex items-center gap-2 flex-wrap">
+              <span class="badge badge-outline">{a.source}</span>
+              {a.published && <span class="opacity-70">publié le {fr(a.published)}</span>}
+            </p>
+            <p class="mt-2">{a.resume}</p>
+            <p class="mt-1"><b>Pour un administrateur réseau :</b> {a.impact}</p>
+          </div>
+        ))}
+      </div>
+    </details>
+  ))}
+</BaseLayout>
