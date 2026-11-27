@@ -1,5 +1,57 @@
 [
   {
+    "date": "2026-11-27",
+    "type": "daily",
+    "file": "2026-11-27.md",
+    "articles": [
+      {
+        "titre": "Microsoft supprime le rôle de serveur WSUS dans Windows Server 2028",
+        "title": "Microsoft removes WSUS server role in Windows Server 2028",
+        "source": "BleepingComputer",
+        "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-removes-wsus-server-role-in-windows-server-2028/",
+        "published": "2026-11-27",
+        "resume": "Microsoft a annoncé la suppression prochaine du rôle de serveur WSUS dans la future version majeure de son système d'exploitation, Windows Server 2028. Cette décision marque un tournant dans la gestion traditionnelle des mises à jour au sein des infrastructures d'entreprise.",
+        "impact": "L'administrateur réseau devra impérativement adapter ses méthodes et se tourner vers des solutions alternatives pour assurer la gestion et le déploiement des correctifs."
+      },
+      {
+        "titre": "Drupal met en garde contre une nouvelle faille de prise de contrôle de site exploitée lors d'attaques",
+        "title": "Drupal warns of new site takeover flaw exploited in attacks",
+        "source": "BleepingComputer",
+        "link": "https://www.bleepingcomputer.com/news/security/drupal-warns-of-new-access-bypass-flaw-exploited-in-attacks/",
+        "published": "2026-11-27",
+        "resume": "L'équipe de sécurité de Drupal a signalé qu'une deuxième vulnérabilité critique est actuellement exploitée par des attaquants. Cette faille permet de compromettre et de pirater des sites web qui n'ont pas encore été mis à jour.",
+        "impact": "Il devient crucial pour l'équipe technique de surveiller étroitement les correctifs et d'appliquer les mises à jour de sécurité sans délai pour protéger les applications web hébergées."
+      },
+      {
+        "titre": "SAP confirme un incident de sécurité après une activité suspecte sur GitHub",
+        "title": "SAP confirms security incident after suspicious GitHub activity",
+        "source": "BleepingComputer",
+        "link": "https://www.bleepingcomputer.com/news/security/sap-confirms-security-incident-after-suspicious-github-activity/",
+        "published": "2026-11-27",
+        "resume": "L'entreprise SAP a confirmé à BleepingComputer qu'elle a pris des mesures d'urgence pour protéger ses clients après avoir détecté des agissements suspects dans son environnement informatique. L'alerte a été déclenchée suite à une activité anormale repérée sur la plateforme GitHub.",
+        "impact": "Cette situation rappelle aux administrateurs la nécessité de renforcer la surveillance des environnements de développement et des dépôts de code tiers connectés au réseau."
+      },
+      {
+        "titre": "Microsoft pousse un correctif d'urgence pour résoudre les plantages de Windows Server",
+        "title": "Microsoft pushes emergency hotpatch to fix Windows Server crashes",
+        "source": "BleepingComputer",
+        "link": "https://www.bleepingcomputer.com/news/microsoft/new-out-of-band-oob-emergency-hotpatch-fixes-windows-server-2025-crashes/",
+        "published": "2026-11-27",
+        "resume": "Microsoft a publié une mise à jour corrective d'urgence afin de régler les plantages de Windows Server 2025. Ces incidents techniques avaient été provoqués par l'installation du correctif de sécurité mensuel précédent.",
+        "impact": "L'exploitant réseau doit désormais intégrer une phase de test plus rigoureuse avant de déployer les patchs pour éviter des interruptions de service imprévues."
+      },
+      {
+        "titre": "Une nouvelle faille Linux NFS2ROOT permet à des attaquants d'obtenir les privilèges root",
+        "title": "New NFS2ROOT Linux flaw can let attackers gain root privileges",
+        "source": "BleepingComputer",
+        "link": "https://www.bleepingcomputer.com/news/security/new-nfs2root-linux-flaw-can-let-attackers-gain-root-privileges/",
+        "published": "2026-11-27",
+        "resume": "Une vulnérabilité critique vieille de 12 ans dans le serveur NFS du noyau Linux, référencée CVE-2026-99362, a été mise en lumière. Elle offre la possibilité à des attaquants distants d'obtenir les privilèges root sur les systèmes ciblés.",
+        "impact": "Ce type de découverte oblige les gestionnaires d'infrastructure à auditer leurs services de fichiers et à appliquer rapidement les correctifs du noyau pour contrer l'élévation de privilèges."
+      }
+    ]
+  },
+  {
     "date": "2026-11-26",
     "type": "retrospective",
     "du": "2026-11-05",
