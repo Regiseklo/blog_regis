@@ -1,5 +1,48 @@
 [
   {
+    "date": "2026-11-28",
+    "type": "daily",
+    "file": "2026-11-28.md",
+    "articles": [
+      {
+        "titre": "Une vulnérabilité zero-day non corrigée dans Cacti avec un PoC public permet l'exécution de code à distance",
+        "title": "Unpatched Cacti zero-day with public PoC gives remote code execution",
+        "source": "BleepingComputer",
+        "link": "https://www.bleepingcomputer.com/news/security/unpatched-cacti-zero-day-with-public-poc-gives-remote-code-execution/",
+        "published": "2026-11-27",
+        "resume": "Une faille zero-day affectant la plateforme de surveillance réseau Cacti a été divulguée publiquement avec un exploit de type PoC. Des attaquants non authentifiés peuvent ainsi exécuter des commandes sur les serveurs vulnérables.",
+        "impact": "Cela oblige l'administrateur réseau à auditer et à appliquer immédiatement les correctifs sur les outils de supervision pour éviter les intrusions distantes."
+      },
+      {
+        "titre": "La plateforme cloud de l'US Air Force aurait été piratée lors d'une récente cyberattaque fédérale",
+        "title": "US Air Force cloud platform reportedly hacked in latest federal breach",
+        "source": "BleepingComputer",
+        "link": "https://www.bleepingcomputer.com/news/security/us-air-force-cloud-platform-reportedly-hacked-in-latest-federal-breach/",
+        "published": "2026-11-27",
+        "resume": "Des hackers auraient réussi à compromettre la plateforme informatique Cloud One de l'US Air Force. Cet incident s'ajoute à une vague récente de cyberattaques ciblant plusieurs agences gouvernementales américaines.",
+        "impact": "Cette menace démontre qu'aucun système cloud n'est infaillible, incitant les gestionnaires d'infrastructure à renforcer la sécurité et la surveillance des environnements cloud."
+      },
+      {
+        "titre": "Votre pare-feu ne suffit pas : le risque caché des machines virtuelles non gérées",
+        "title": "Your Firewall Isn't Enough: The Hidden Risk of Unmanaged VMs",
+        "source": "BleepingComputer",
+        "link": "https://www.bleepingcomputer.com/news/security/your-firewall-isnt-enough-the-hidden-risk-of-unmanaged-vms/",
+        "published": "2026-11-27",
+        "resume": "Les machines virtuelles oubliées, les serveurs non mis à jour et les accès excessifs génèrent des angles morts dans la sécurité des infrastructures informatiques. Une gestion centralisée, des contrôles d'accès et l'automatisation du cycle de vie des ressources permettent de réduire ces risques.",
+        "impact": "L'administrateur doit désormais élargir son champ de vision au-delà du réseau traditionnel pour sécuriser et automatiser le suivi de l'ensemble du cycle de vie des machines virtuelles."
+      },
+      {
+        "titre": "pCloud confirme le piratage de son gestionnaire de mots de passe après des alertes de connexion suspectes",
+        "title": "pCloud confirms password manager hack after suspicious login alerts",
+        "source": "BleepingComputer",
+        "link": "https://www.bleepingcomputer.com/news/security/pcloud-confirms-password-manager-hack-after-suspicious-login-alerts/",
+        "published": "2026-11-27",
+        "resume": "Le gestionnaire de mots de passe pCloud Pass a été la cible d'une cyberattaque signalée par des utilisateurs dont les comptes ont été connectés par des appareils inconnus malgré l'activation de la double authentification. L'entreprise a confirmé l'incident.",
+        "impact": "Ce type d'attaque rappelle aux professionnels des réseaux qu'aucun service d'authentification n'est totalement étanche et que la sécurisation des accès reste un défi critique."
+      }
+    ]
+  },
+  {
     "date": "2026-11-27",
     "type": "daily",
     "file": "2026-11-27.md",
